@@ -1,0 +1,14 @@
+{
+  "name": "z-blog-spider",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/solocao/z-blog-spider.git",
+  "author": "caowei <solocao@126.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0",
+    "superagent": "^3.8.3"
+  }
+}
