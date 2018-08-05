@@ -31,14 +31,16 @@ fs
   .forEach(function (file) {
     const site = require(path.join(__dirname, `../site/${file}`));
     if (site.spider) {
-      site.categoryList.forEach(async (x) => {
-        // 获取具体页列表
-        const siteUrls = await suckSite(x.url, site.listRule)
-        console.log(siteUrls)
-        siteUrls.forEach(x => {
-          suckSite(x, site.detailRule)
+      site.categoryList.forEach(async (categoty) => {
+        categoty.url.forEach(async (x) => {
+          // 获取具体页列表
+          const siteUrls = await suckSite(x, site.listRule)
+          siteUrls.forEach(x => {
+            suckSite(x, site.detailRule)
+          })
+          // suckSite(siteUrls[0], site.detailRule)
+          // suckSite('http://www.qiye.gov.cn/news/qiye/shij/24403.html', site.detailRule)
         })
-        // suckSite(siteUrls[0], site.detailRule)
       })
     }
   });

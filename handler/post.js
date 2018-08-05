@@ -6,6 +6,26 @@ const postList = async () => {
   console.log(JSON.parse(JSON.stringify(ones)))
 }
 
+const isExisted = async (title) => {
+  const one = await Post.findOne({
+    where: {
+      log_Title: title
+    }
+  })
+  // if (title === '余额宝红包开始升级加磅 支付宝红包城市周今日开启') {
+  //   console.log('hhahah')
+  //   console.log(one)
+  //   return ''
+  // }
+  // console.log(JSON.parse(JSON.stringify(one)))
+  console.log('----------------------------------------------------')
+  if (one === null) {
+    return false
+  } else {
+    return true
+  }
+}
+
 const postAdd = async (title = '', intro = '', content = '') => {
   const AddModel = {
     log_Title: title,
@@ -20,4 +40,4 @@ const postAdd = async (title = '', intro = '', content = '') => {
 
 // postAdd('文章标题', '文章描述', '内容文本')
 // PostList()
-module.exports = { postAdd }
+module.exports = { postAdd, isExisted }
