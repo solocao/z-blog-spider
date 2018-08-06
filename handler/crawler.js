@@ -4,9 +4,6 @@ var cheerio = require('cheerio')
 var async = require('async')
 var url = require('url')
 
-var iconv = require('iconv-lite');
-var BufferHelper = require('bufferhelper');
-
 const fs = require('fs');
 const path = require('path');
 

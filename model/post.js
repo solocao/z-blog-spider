@@ -52,6 +52,14 @@ module.exports = function (sequelize, DataTypes) {
     log_Meta: {
       type: DataTypes.TEXT('long'),
       defaultValue: ''
+    },
+    log_Source: {
+      type: DataTypes.STRING(255),
+      defaultValue: ''
+    },
+    log_SourceLink: {
+      type: DataTypes.STRING(255),
+      defaultValue: ''
     }
   }, {
       freezeTableName: true, // Model 对应的表名将与model名相同

@@ -1,6 +1,7 @@
-const url = require('url')
-const postHandler = require('../handler/post.js')
-const { suck } = require('../handler/crawler.js')
+const url = require('url');
+var sleep = require('sleep');
+const postHandler = require('../handler/post.js');
+const { suck } = require('../handler/crawler.js');
 const siteName = '中国企业新闻网';
 const categoryList = [
   {
@@ -10,7 +11,7 @@ const categoryList = [
     ],
     // 系统目标分类
     target_category: 4,
-    spider: 'qwe'
+    spider: true
   },
   {
     category: "专题报道",
@@ -96,10 +97,11 @@ const categoryList = [
   {
     category: "行业资讯",
     url: [
-      "http://www.gdcenn.cn/hy/"
+      // "http://www.gdcenn.cn/hy/"
+      "http://www.gdcenn.cn/news_list.asp?classid=155"
     ],
     target_category: 14,
-    spider: true
+    spider: '666'
   },
   {
     category: "民生焦点",
@@ -128,6 +130,7 @@ const categoryList = [
 ];
 
 const suckList = async function (siteUrl) {
+
   const $ = await suck(siteUrl);
   const li = $('.news-tb .uuggg .vvv a')
   const urlList = []
@@ -140,6 +143,7 @@ const suckList = async function (siteUrl) {
 }
 
 const suckDetail = async function (siteUrl, categoty) {
+  sleep.sleep(1);
   const $ = await suck(siteUrl);
   const title = $('.ntq-news2 .znn').text();
   const description = $('.ntq-news2 .ssevg').text();
@@ -155,7 +159,7 @@ const suckDetail = async function (siteUrl, categoty) {
 
 
 categoryList.forEach(async (categoty) => {
-  if (categoty.spider === 'qwe') {
+  if (categoty.spider === '666') {
     categoty.url.forEach(async (x) => {
       // 获取详情页列表
       const detialUrls = await suckList(x);
