@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     log_CateID: {
       type: DataTypes.INTEGER,
-      defaultValue: 0
+      defaultValue: 2
     },
     log_AuthorID: {
       type: DataTypes.INTEGER,

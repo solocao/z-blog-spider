@@ -26,11 +26,14 @@ const isExisted = async (title) => {
   }
 }
 
-const postAdd = async (title = '', intro = '', content = '') => {
+const postAdd = async (title = '', intro = '', content = '', category = 2, source = '', sourceLink = '') => {
   const AddModel = {
     log_Title: title,
     log_Intro: intro,
     log_Content: content,
+    log_CateID: category,
+    log_Source: source,
+    log_SourceLink: sourceLink,
     log_PostTime: Date.parse(new Date()) / 1000
   }
   const add = await Post.create(AddModel).catch(function (err) {

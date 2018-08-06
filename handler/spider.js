@@ -30,8 +30,8 @@ fs
   .readdirSync(path.join(__dirname, '../site'))
   .forEach(function (file) {
     const site = require(path.join(__dirname, `../site/${file}`));
-    if (site.spider) {
-      site.categoryList.forEach(async (categoty) => {
+    site.categoryList.forEach(async (categoty) => {
+      if (categoty.spider) {
         categoty.url.forEach(async (x) => {
           // 获取具体页列表
           const siteUrls = await suckSite(x, site.listRule)
@@ -41,6 +41,6 @@ fs
           // suckSite(siteUrls[0], site.detailRule)
           // suckSite('http://www.qiye.gov.cn/news/qiye/shij/24403.html', site.detailRule)
         })
-      })
-    }
+      }
+    })
   });
