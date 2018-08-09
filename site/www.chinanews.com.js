@@ -2,8 +2,6 @@ const url = require('url')
 const postHandler = require('../handler/post.js')
 
 const siteName = '中国新闻网';
-
-
 const categoryList = [
   {
     category: "企业事件",

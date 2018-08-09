@@ -28,7 +28,7 @@ const categoryList = [
       "http://www.gdcenn.cn/news_list.asp?ClassID=8"
     ],
     target_category: 6,
-    spider: true
+    spider: '111'
   },
   {
     category: "热点话题",
@@ -36,7 +36,7 @@ const categoryList = [
       "http://www.gdcenn.cn/news_list.asp?ClassID=71"
     ],
     target_category: 7,
-    spider: true
+    spider: '777'
   },
   {
     category: "图片新闻",
@@ -68,7 +68,7 @@ const categoryList = [
       "http://www.gdcenn.cn/news_list.asp?ClassID=74"
     ],
     target_category: 10,
-    spider: true
+    spider: '123'
   },
   {
     category: "新闻联播",
@@ -92,7 +92,7 @@ const categoryList = [
       "http://www.gdcenn.cn/news_list.asp?ClassID=67"
     ],
     target_category: 13,
-    spider: true
+    spider: '1313'
   },
   {
     category: "行业资讯",
@@ -117,7 +117,7 @@ const categoryList = [
       "http://www.gdcenn.cn/news_list.asp?ClassID=113"
     ],
     target_category: 16,
-    spider: true
+    spider: '1616'
   },
   {
     category: "娱乐八卦",
@@ -159,7 +159,7 @@ const suckDetail = async function (siteUrl, categoty) {
 
 
 categoryList.forEach(async (categoty) => {
-  if (categoty.spider === '666') {
+  if (categoty.spider === '1616') {
     categoty.url.forEach(async (x) => {
       // 获取详情页列表
       const detialUrls = await suckList(x);
